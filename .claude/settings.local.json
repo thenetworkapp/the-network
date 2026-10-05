@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -o '\"content\":\\\\[{\"type\":\"text\",\"text\":\"[^\"]*')",
+      "Bash(python3 -c ' *)",
+      "Bash(sed 's/\"data\":\"//')",
+      "Bash(sed -n '2p' /c/Users/HenryNealOxfordCityF/.claude/projects/c--Users-HenryNealOxfordCityF-OneDrive---Ignite-Sport-UK-Ltd-Documents-Antigravity-Projects/ea2f8945-3dab-4e0a-b3b6-d7f23063eeff.jsonl)",
+      "Read(//tmp/**)",
+      "Bash(grep -o '\"data\":\"[^\"]*\\\\\\\\\\(\\\\\\\\\\\\\\\\n[^\"]*\\\\\\\\\\)*')",
+      "Bash(sed 's/\\\\\\\\\\\\\\\\n/\\\\n/g')",
+      "Bash(sed 's/\\\\\\\\n/\\\\n/g')",
+      "Bash(sed 's/\\\\\\\\n/@NL@/g')"
+    ]
+  }
+}

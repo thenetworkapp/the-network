@@ -1,0 +1,419 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-ground);
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  font-stretch: 78%;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  font-stretch: 78%;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-ink2);
+  margin: 0;
+}
+
+.body strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-ink2);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--color-ground);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: var(--color-blue);
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--color-ground);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  color: var(--color-ink);
+  font-family: var(--font-mono, monospace);
+  outline: none;
+  transition: border-color 0.15s;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  border-color: var(--color-blue);
+}
+
+.note {
+  font-size: 12px;
+  color: var(--color-muted);
+  line-height: 1.5;
+  background: var(--color-ground);
+  border-radius: var(--radius-tile);
+  padding: 10px 12px;
+  margin: 0;
+}
+
+.note strong {
+  color: var(--color-ink2);
+  font-weight: 600;
+}
+
+.error {
+  font-size: 13px;
+  color: var(--color-bad);
+  background: color-mix(in srgb, var(--color-bad) 8%, transparent);
+  border-radius: var(--radius-tile);
+  padding: 10px 12px;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.primaryBtn {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-blue);
+  color: #fff;
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  border: none;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ghostBtn {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-ground);
+  color: var(--color-ink);
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1px solid var(--color-line);
+}
+
+.ghostBtn:hover {
+  background: var(--color-line);
+}
+
+.codeBox {
+  background: var(--color-ground);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-tile);
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.codeText {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: var(--color-ink2);
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.copyBtn {
+  width: 100%;
+  padding: 11px;
+  background: color-mix(in srgb, var(--color-blue) 10%, transparent);
+  color: var(--color-blue);
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1px solid color-mix(in srgb, var(--color-blue) 25%, transparent);
+}
+
+.copyBtn:hover {
+  background: color-mix(in srgb, var(--color-blue) 16%, transparent);
+}
+
+/* ── Wide layout for platforms step ─────────────────────────────────────────── */
+
+.rootWide {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-ground);
+  padding: 40px 24px;
+}
+
+.cardWide {
+  width: 100%;
+  max-width: 780px;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.teamCodeBanner {
+  background: var(--color-ground);
+  border-radius: var(--radius-tile);
+  border: 1px solid var(--color-line);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.teamCodeLabel {
+  font-size: 13px;
+  color: var(--color-ink2);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Platform rows ───────────────────────────────────────────────────────────── */
+
+.platformsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.platformRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius-tile);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  flex-wrap: wrap;
+}
+
+.platformDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platformInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.platformName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink2);
+}
+
+.platformAccount {
+  font-size: 11px;
+  color: var(--color-ok);
+  margin-top: 1px;
+}
+
+.platformActions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.credsTrigger {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s ease;
+}
+.credsTrigger:hover { background: var(--color-surface2); }
+
+.connectBtn {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: var(--radius-control);
+  border: none;
+  background: var(--color-blue);
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.12s ease;
+}
+.connectBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.connectBtn:not(:disabled):hover { opacity: 0.88; }
+
+.connectedBadge {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid rgba(22,163,74,.3);
+  background: rgba(22,163,74,.08);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-ok);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s ease;
+}
+.connectedBadge:hover { background: rgba(220,38,38,.08); color: var(--color-bad); border-color: rgba(220,38,38,.3); }
+
+.inlineForm {
+  width: 100%;
+  overflow: hidden;
+}
+
+.inlineFormInner {
+  display: flex;
+  gap: 6px;
+  padding-top: 8px;
+  align-items: center;
+}
+
+.inlineInput {
+  flex: 1;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: 1.5px solid var(--color-line);
+  background: var(--color-ground);
+  font-size: 12px;
+  font-family: var(--font-mono, monospace);
+  color: var(--color-ink);
+  outline: none;
+  min-width: 0;
+}
+.inlineInput:focus { border-color: var(--color-blue); }
+
+/* ── Wizard account chips ────────────────────────────────────────────────────── */
+
+.wizardAccountsList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-top: 4px;
+}
+
+.wizardAccountChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 6px 0 8px;
+  border-radius: 11px;
+  border: 1px solid rgba(22,163,74,.25);
+  background: rgba(22,163,74,.07);
+  font-size: 11px;
+  color: var(--color-ok);
+}
+
+.wizardAccountRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--color-ok);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.1s;
+}
+.wizardAccountRemove:hover { opacity: 1; }

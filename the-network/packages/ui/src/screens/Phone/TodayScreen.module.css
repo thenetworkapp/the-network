@@ -1,0 +1,185 @@
+.screen {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Section ── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--color-muted);
+  padding: 12px 0;
+}
+
+/* ── Event card ── */
+.eventCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--color-line);
+}
+
+.eventTime {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.eventTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+
+.eventMeta {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+/* ── Video list ── */
+.videoList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.videoCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--color-line);
+}
+
+.thumbnail {
+  width: 52px;
+  height: 36px;
+  border-radius: var(--radius-tile);
+  background: var(--color-ground);
+  flex-shrink: 0;
+}
+
+.videoInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.videoTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.videoMeta {
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+/* ── Stage badge ── */
+.stageBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.stageLive {
+  background: rgba(255, 69, 58, 0.12);
+  color: var(--color-live);
+}
+
+.stageScheduled {
+  background: rgba(28, 63, 203, 0.1);
+  color: var(--color-blue);
+}
+
+.stageDraft {
+  background: var(--color-ground);
+  color: var(--color-muted);
+}
+
+.stageDefault {
+  background: var(--color-ground);
+  color: var(--color-muted);
+}
+
+/* ── Quick actions ── */
+.quickActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.actionBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background 0.12s ease;
+  min-height: 44px;
+}
+
+.actionBtn:active {
+  background: var(--color-ground);
+}
+
+.actionBtnDone {
+  color: var(--color-ok);
+}
+
+/* ── Skeleton ── */
+.skeleton {
+  height: 72px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(90deg, var(--color-ground) 25%, var(--color-surface) 50%, var(--color-ground) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

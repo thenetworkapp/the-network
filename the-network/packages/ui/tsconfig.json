@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@network/core": ["../core/src/index.ts"],
+      "@network/ui": ["./src/index.ts"]
+    }
+  }
+}

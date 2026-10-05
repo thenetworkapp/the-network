@@ -1,0 +1,543 @@
+/* ── Screen shell ─────────────────────────────────────────────────────────── */
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 32px;
+}
+
+/* ── Page header ─────────────────────────────────────────────────────────── */
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pageTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ── Platform Approvals card ─────────────────────────────────────────────── */
+
+.approvalsCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.approvalsToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s ease;
+}
+
+.approvalsToggle:hover {
+  background: var(--color-bg);
+}
+
+.approvalsPanelTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.chevron {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1;
+}
+
+.approvalsBody {
+  overflow: hidden;
+  border-top: 1px solid var(--color-line);
+}
+
+.approvalsTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.approvalsHead {
+  display: grid;
+  grid-template-columns: 140px 140px 160px 1fr 180px;
+  padding: 0 20px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.appTh {
+  padding: 8px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
+.approvalsRow {
+  display: grid;
+  grid-template-columns: 140px 140px 160px 1fr 180px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-line);
+  align-items: center;
+  transition: background 0.1s ease;
+}
+
+.approvalsRow:last-child {
+  border-bottom: none;
+}
+
+.approvalsRow:hover {
+  background: rgba(28, 63, 203, 0.02);
+}
+
+.appTd {
+  padding: 10px 8px;
+  font-size: 13px;
+}
+
+.appActionCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.platformName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.appMeta {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.approvalsEmpty {
+  padding: 24px 20px;
+  font-size: 13px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* ── Approval badges ─────────────────────────────────────────────────────── */
+
+.approvalBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.approvalNotSubmitted { background: rgba(107,114,128,0.1); color: #6B7280; }
+.approvalPending      { background: rgba(178,94,0,0.12); color: #B25E00; }
+.approvalApproved     { background: rgba(21,128,61,0.12); color: #15803D; }
+.approvalRejected     { background: rgba(196,43,43,0.1); color: #C42B2B; }
+
+/* ── Inline form controls ────────────────────────────────────────────────── */
+
+.inlineSelect,
+.inlineInput {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-bg);
+  font-size: 12px;
+  color: var(--color-text);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.inlineSelect:focus,
+.inlineInput:focus {
+  border-color: var(--color-blue);
+}
+
+.inlineInput {
+  width: 100%;
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+
+.tabBar {
+  display: flex;
+  gap: 2px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  width: fit-content;
+}
+
+.tab {
+  height: 30px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.12s ease, color 0.12s ease;
+  font-family: inherit;
+}
+
+.tab:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.tabActive {
+  background: var(--color-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.tabActive:hover {
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.tabCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(107,114,128,0.15);
+  color: var(--color-muted);
+}
+
+.tabCountActive {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+/* ── Queue table ─────────────────────────────────────────────────────────── */
+
+.table {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.thead {
+  display: grid;
+  grid-template-columns: 130px 1.2fr 1.4fr 170px 100px 80px 1fr;
+  padding: 0 16px;
+  border-bottom: 2px solid var(--color-line);
+  background: var(--color-bg);
+}
+
+.qTh {
+  padding: 10px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  text-align: left;
+}
+
+.queueRow {
+  display: grid;
+  grid-template-columns: 130px 1.2fr 1.4fr 170px 100px 80px 1fr;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-line);
+  align-items: center;
+  transition: background 0.1s ease;
+}
+
+.queueRow:last-child {
+  border-bottom: none;
+}
+
+.queueRow:hover {
+  background: rgba(28, 63, 203, 0.025);
+}
+
+.qTd {
+  padding: 11px 8px;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.qActionCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── Cell styles ─────────────────────────────────────────────────────────── */
+
+.cellPrimary {
+  font-weight: 600;
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.cellSecondary {
+  color: var(--color-text);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cellMuted {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.cellMono {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.platformChip {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--radius-md);
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.attemptsCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(196,43,43,0.1);
+  color: #C42B2B;
+}
+
+/* ── Package status badges ───────────────────────────────────────────────── */
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.statusDraft     { background: rgba(107,114,128,0.1); color: #6B7280; }
+.statusReady     { background: rgba(21,128,61,0.1); color: #15803D; }
+.statusScheduled { background: rgba(28,63,203,0.1); color: var(--color-blue); }
+.statusUploading { background: rgba(28,63,203,0.12); color: var(--color-blue); animation: pulse 1.4s ease-in-out infinite; }
+.statusPublished { background: rgba(21,128,61,0.18); color: #0F5F2E; }
+.statusFailed    { background: rgba(196,43,43,0.1); color: #C42B2B; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ── Mark published inline row ───────────────────────────────────────────── */
+
+.publishExpandRow {
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.publishExpandInner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px 10px 150px;
+  background: rgba(28,63,203,0.025);
+}
+
+.publishExpandLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.publishUrlInput {
+  flex: 1;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-size: 13px;
+  color: var(--color-text);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.publishUrlInput:focus {
+  border-color: var(--color-blue);
+}
+
+/* ── Action buttons ──────────────────────────────────────────────────────── */
+
+.actionBtn {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease, color 0.1s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: rgba(0,0,0,0.15);
+}
+
+.actionBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.actionBtnBlue {
+  color: var(--color-blue);
+  border-color: rgba(28,63,203,0.25);
+}
+
+.actionBtnBlue:hover:not(:disabled) {
+  background: rgba(28,63,203,0.06);
+  border-color: rgba(28,63,203,0.4);
+  color: var(--color-blue);
+}
+
+.actionBtnGreen {
+  color: #15803D;
+  border-color: rgba(21,128,61,0.3);
+}
+
+.actionBtnGreen:hover:not(:disabled) {
+  background: rgba(21,128,61,0.06);
+  border-color: rgba(21,128,61,0.5);
+  color: #15803D;
+}
+
+.actionBtnLink {
+  color: var(--color-blue);
+  border-color: rgba(28,63,203,0.2);
+}
+
+.actionBtnLink:hover {
+  background: rgba(28,63,203,0.06);
+  border-color: rgba(28,63,203,0.35);
+  color: var(--color-blue);
+}
+
+/* ── Inline btn (approvals panel) ────────────────────────────────────────── */
+
+.inlineBtn {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: background 0.1s ease, border-color 0.1s ease, color 0.1s ease;
+}
+
+.inlineBtn:hover:not(:disabled) {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.inlineBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.inlineBtnPrimary {
+  color: var(--color-blue);
+  border-color: rgba(28,63,203,0.25);
+}
+
+.inlineBtnPrimary:hover:not(:disabled) {
+  background: rgba(28,63,203,0.06);
+  border-color: rgba(28,63,203,0.4);
+  color: var(--color-blue);
+}
+
+/* ── Empty / loading ─────────────────────────────────────────────────────── */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 13px;
+}

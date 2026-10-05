@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/renderer/src/**/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@renderer/*": ["src/renderer/src/*"],
+      "@network/core": ["../../packages/core/src/index.ts"],
+      "@network/ui": ["../../packages/ui/src/index.ts"],
+      "@network/ui/styles": ["../../packages/ui/src/styles/global.css"]
+    }
+  }
+}

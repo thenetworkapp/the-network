@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,75,700;0,75,800;0,100,700;0,100,800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-ground: #EDEFF3;
+  --color-surface: #FFFFFF;
+  --color-surface2: #F3F4F7;
+  --color-ink: #111318;
+  --color-ink2: #1F2329;
+  --color-ink3: #3C4049;
+  --color-muted: #5B616E;
+  --color-faint: #6B7180;
+  --color-line: rgba(17,19,24,.07);
+  --color-blue: #1C3FCB;
+  --color-blue-hover: #2449DB;
+  --color-ok: #15803D;
+  --color-warn: #B25E00;
+  --color-bad: #C42B2B;
+  --color-live: #FF453A;
+
+  --font-display: "Archivo", -apple-system, system-ui, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+
+  --radius-card: 12px;
+  --radius-tile: 10px;
+  --radius-control: 999px;
+  --radius-sheet: 24px;
+  --radius-sidebar: 26px;
+
+  --glass-bg: rgba(255,255,255,.58);
+  --glass-border: rgba(255,255,255,.78);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 16px 44px rgba(17,19,24,.14);
+
+  /* Aliases used by generated screens */
+  --color-bg: var(--color-ground);
+  --color-text: var(--color-ink);
+  --radius-md: var(--radius-tile);
+  --radius-lg: var(--radius-card);
+  --radius-sm: 6px;
+
+  color-scheme: light;
+  font-family: var(--font-text);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background-color: var(--color-ground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

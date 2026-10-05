@@ -1,0 +1,186 @@
+.screen {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.012em;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+/* ── Approval item ── */
+.item {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-line);
+}
+
+.itemTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+
+.itemMeta {
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+/* ── Action buttons ── */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.approveBtn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-tile);
+  background: rgba(21, 128, 61, 0.1);
+  color: var(--color-ok);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.12s ease;
+  min-height: 44px;
+}
+
+.approveBtn:active {
+  background: rgba(21, 128, 61, 0.18);
+}
+
+.approveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rejectBtn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-tile);
+  background: rgba(196, 43, 43, 0.08);
+  color: var(--color-bad);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.12s ease;
+  min-height: 44px;
+}
+
+.rejectBtn:active {
+  background: rgba(196, 43, 43, 0.14);
+}
+
+.rejectBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Reject form ── */
+.rejectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notesInput {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-tile);
+  border: 1px solid var(--color-line);
+  background: var(--color-ground);
+  font-size: 13px;
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  outline: none;
+}
+
+.notesInput:focus {
+  border-color: var(--color-blue);
+}
+
+.rejectActions {
+  display: flex;
+  gap: 8px;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-tile);
+  background: var(--color-ground);
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  min-height: 44px;
+}
+
+.rejectConfirmBtn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-tile);
+  background: var(--color-bad);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  min-height: 44px;
+}
+
+.rejectConfirmBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Empty state ── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* ── Skeletons ── */
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton {
+  height: 96px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(90deg, var(--color-ground) 25%, var(--color-surface) 50%, var(--color-ground) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

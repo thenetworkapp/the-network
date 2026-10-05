@@ -1,0 +1,86 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 16px;
+  height: 34px;
+  border-radius: var(--radius-control);
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  user-select: none;
+  position: relative;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.primary {
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--color-blue-hover);
+}
+
+.secondary {
+  background: var(--color-surface2);
+  color: var(--color-ink2);
+}
+
+.secondary:hover {
+  background: var(--color-line);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-ink2);
+}
+
+.ghost:hover {
+  background: var(--color-surface2);
+}
+
+.destructive {
+  background: var(--color-bad);
+  color: #fff;
+}
+
+.sm {
+  height: 28px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.lg {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.iconOnly {
+  padding: 0;
+  width: 34px;
+}
+
+.iconOnly.sm {
+  width: 28px;
+}
+
+.iconOnly.lg {
+  width: 40px;
+}

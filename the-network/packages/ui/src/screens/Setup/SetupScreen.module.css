@@ -1,0 +1,118 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-ground);
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  font-stretch: 78%;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  font-stretch: 78%;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-ink2);
+}
+
+.body strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.note {
+  font-size: 12px;
+  color: var(--color-muted);
+  line-height: 1.5;
+  background: var(--color-ground);
+  border-radius: var(--radius-tile);
+  padding: 10px 12px;
+}
+
+.error {
+  font-size: 13px;
+  color: var(--color-bad);
+  background: color-mix(in srgb, var(--color-bad) 8%, transparent);
+  border-radius: var(--radius-tile);
+  padding: 10px 12px;
+}
+
+.primaryBtn {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-blue);
+  color: #fff;
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 4px;
+}
+
+.primaryBtn:hover {
+  opacity: 0.9;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.ghostBtn {
+  flex: 1;
+  padding: 10px;
+  background: var(--color-ground);
+  color: var(--color-ink);
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ghostBtn:hover {
+  background: var(--color-line);
+}

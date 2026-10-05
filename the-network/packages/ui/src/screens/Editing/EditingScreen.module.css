@@ -1,0 +1,463 @@
+/* ── Screen shell ─────────────────────────────────────────────────────────── */
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-tile);
+  padding: 3px;
+  width: fit-content;
+}
+
+.tab {
+  height: 30px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.tab:hover {
+  background: var(--color-surface2);
+  color: var(--color-ink);
+}
+
+.tabActive {
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* ── Tab content ──────────────────────────────────────────────────────────── */
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Toolbar ──────────────────────────────────────────────────────────────── */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.spacer { flex: 1; }
+
+.filterSelect {
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-family: var(--font-text);
+  font-size: 13px;
+  color: var(--color-ink2);
+  outline: none;
+  cursor: pointer;
+}
+
+.statusFilters {
+  display: flex;
+  gap: 2px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-control);
+  padding: 2px;
+}
+
+.statusFilterBtn {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.statusFilterBtn:hover {
+  background: var(--color-surface2);
+  color: var(--color-ink);
+}
+
+.statusFilterActive {
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.statusFilterActive:hover {
+  background: var(--color-blue-hover);
+  color: #fff;
+}
+
+/* ── Table ────────────────────────────────────────────────────────────────── */
+
+.table {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.thead {
+  border-bottom: 2px solid var(--color-line);
+  padding: 0 16px;
+}
+
+.th {
+  padding: 10px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+.row {
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-line);
+  cursor: pointer;
+  transition: background 0.1s ease;
+  align-items: center;
+}
+
+.row:last-child { border-bottom: none; }
+.row:hover { background: rgba(28,63,203,.025); }
+
+.rowExpanded { background: rgba(28,63,203,.02); }
+
+.td {
+  padding: 11px 8px;
+  font-size: 13px;
+  color: var(--color-ink2);
+}
+
+/* ── Grid column layouts ──────────────────────────────────────────────────── */
+
+.jobsGrid {
+  display: grid;
+  grid-template-columns: 120px 1fr 90px 120px 110px 150px 150px;
+}
+
+.decisionsGrid {
+  display: grid;
+  grid-template-columns: 100px 1fr 130px 1fr 90px 160px;
+}
+
+.riskGrid {
+  display: grid;
+  grid-template-columns: 100px 1fr 130px 1fr 110px 160px;
+}
+
+/* ── Kind pills ───────────────────────────────────────────────────────────── */
+
+.kindPill {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--radius-control);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  background: var(--color-surface2);
+  color: var(--color-muted);
+}
+
+/* Decision kind colours */
+.decisionCut    { background: rgba(196,43,43,.1); color: var(--color-bad); }
+.decisionReorder { background: rgba(28,63,203,.1); color: var(--color-blue); }
+.decisionColdOpen { background: rgba(178,94,0,.1); color: var(--color-warn); }
+
+/* Risk kind colours */
+.riskLegal     { background: rgba(196,43,43,.1);  color: var(--color-bad); }
+.riskCopyright { background: rgba(178,94,0,.1);   color: var(--color-warn); }
+.riskLanguage  { background: rgba(28,63,203,.1);  color: var(--color-blue); }
+.riskSensitive { background: rgba(108,30,180,.1); color: #6C1EB4; }
+
+/* ── Status badges ────────────────────────────────────────────────────────── */
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--radius-control);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.badgeQueued    { background: var(--color-surface2); color: var(--color-muted); }
+.badgeRunning   { background: rgba(28,63,203,.12); color: var(--color-blue); animation: pulse 1.4s ease-in-out infinite; }
+.badgeDone      { background: rgba(21,128,61,.1);  color: var(--color-ok); }
+.badgeFailed    { background: rgba(196,43,43,.1);  color: var(--color-bad); }
+.badgeCancelled { background: var(--color-surface2); color: var(--color-muted); opacity: 0.7; }
+
+.decisionPending  { background: rgba(178,94,0,.1);    color: var(--color-warn); }
+.decisionApproved { background: rgba(21,128,61,.1);   color: var(--color-ok); }
+.decisionRejected { background: rgba(196,43,43,.1);   color: var(--color-bad); }
+.decisionApplied  { background: rgba(28,63,203,.08);  color: var(--color-blue); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ── Progress bar ─────────────────────────────────────────────────────────── */
+
+.progressBarWrap {
+  height: 4px;
+  width: 100%;
+  background: var(--color-line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--color-blue);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ── Row detail (expanded payload) ───────────────────────────────────────── */
+
+.rowDetail {
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.rowDetailInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 24px 16px;
+  background: var(--color-surface2);
+}
+
+.detailBlock {
+  min-width: 200px;
+  flex: 1;
+}
+
+.detailLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  margin-bottom: 6px;
+}
+
+.detailError { color: var(--color-bad); }
+
+.pre {
+  font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
+  font-size: 11px;
+  color: var(--color-ink2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.preError {
+  color: var(--color-bad);
+  background: rgba(196,43,43,.04);
+  border-color: rgba(196,43,43,.15);
+}
+
+/* ── Inline action buttons ────────────────────────────────────────────────── */
+
+.actionCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reasonCell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--color-ink3);
+}
+
+.inlineBtn {
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-family: var(--font-text);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease;
+  white-space: nowrap;
+}
+
+.inlineBtnApprove {
+  color: var(--color-ok);
+  border-color: rgba(21,128,61,.25);
+}
+.inlineBtnApprove:hover {
+  background: rgba(21,128,61,.08);
+  border-color: rgba(21,128,61,.4);
+}
+
+.inlineBtnReject {
+  color: var(--color-bad);
+  border-color: rgba(196,43,43,.25);
+}
+.inlineBtnReject:hover {
+  background: rgba(196,43,43,.06);
+  border-color: rgba(196,43,43,.4);
+}
+
+.inlineBtnNeutral {
+  color: var(--color-muted);
+}
+.inlineBtnNeutral:hover {
+  background: var(--color-surface2);
+  color: var(--color-ink);
+}
+
+/* ── Empty state ──────────────────────────────────────────────────────────── */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+/* ── Modal (Run AI Edit) ──────────────────────────────────────────────────── */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17,19,24,.35);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 201;
+  width: 440px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 24px 64px rgba(17,19,24,.18);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 0;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.modalClose {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-surface2);
+  font-size: 13px;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s ease;
+}
+.modalClose:hover { background: var(--color-line); color: var(--color-ink); }
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 24px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.input {
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-family: var(--font-text);
+  font-size: 13px;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.input:focus { border-color: var(--color-blue); }
+.input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 24px 20px;
+}

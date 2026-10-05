@@ -1,0 +1,252 @@
+.screen { display: flex; flex-direction: column; gap: 16px; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.viewToggle {
+  display: flex;
+  background: var(--color-surface2);
+  border-radius: var(--radius-control);
+  padding: 3px;
+  gap: 2px;
+}
+
+.viewBtn {
+  height: 28px;
+  padding: 0 14px;
+  border-radius: var(--radius-control);
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+.viewBtn.active {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: 0 1px 4px rgba(17,19,24,.08);
+}
+
+.navBtn {
+  height: 32px;
+  width: 32px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s ease;
+}
+.navBtn:hover { background: var(--color-surface2); }
+
+.periodLabel {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-ink);
+  min-width: 160px;
+  text-align: center;
+}
+
+.spacer { flex: 1; }
+
+/* Month grid */
+.monthGrid {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.weekHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.weekHeaderCell {
+  padding: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.monthBody { display: flex; flex-direction: column; }
+.weekRow { display: grid; grid-template-columns: repeat(7, 1fr); }
+
+.dayCell {
+  border-right: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  min-height: 90px;
+  padding: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+.dayCell:nth-child(7n) { border-right: none; }
+.dayCell:hover { background: rgba(28,63,203,.03); }
+.dayCell.otherMonth { background: var(--color-surface2); }
+.dayCell.today .dayNum { background: var(--color-blue); color: #fff; border-radius: 50%; }
+
+.dayNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-ink2);
+  margin-bottom: 4px;
+}
+
+.eventPill {
+  display: block;
+  width: 100%;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.clashIndicator {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-bad);
+}
+
+/* Show colours */
+.show0 { background: #1C3FCB; }
+.show1 { background: #15803D; }
+.show2 { background: #B25E00; }
+.show3 { background: #7C3AED; }
+.show4 { background: #0891B2; }
+
+/* Week view */
+.weekGrid {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.weekDayHeader {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.weekDayHeaderCell {
+  padding: 10px 8px;
+  text-align: center;
+  border-left: 1px solid var(--color-line);
+}
+.weekDayName { font-size: 11px; color: var(--color-muted); font-weight: 600; text-transform: uppercase; }
+.weekDayNum { font-size: 18px; font-weight: 700; color: var(--color-ink); font-family: var(--font-display); font-stretch: 78%; }
+.weekDayHeaderCell.today .weekDayNum { color: var(--color-blue); }
+
+.weekEventRow {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr);
+  border-bottom: 1px solid var(--color-line);
+}
+.weekTimeLabel { padding: 8px; font-size: 10px; color: var(--color-muted); text-align: right; }
+.weekDayCell { border-left: 1px solid var(--color-line); min-height: 60px; padding: 4px; }
+
+/* Season bulk booking modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17,19,24,.3);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-sheet);
+  padding: 28px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 24px 64px rgba(17,19,24,.18);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modalTitle { font-family: var(--font-display); font-stretch: 78%; font-size: 20px; font-weight: 800; color: var(--color-ink); letter-spacing: -0.012em; }
+
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.formGroup { display: flex; flex-direction: column; gap: 4px; }
+.label { font-size: 12px; font-weight: 600; color: var(--color-ink2); }
+.input, .select {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface2);
+  font-family: var(--font-text);
+  font-size: 13px;
+  color: var(--color-ink);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input:focus, .select:focus { border-color: var(--color-blue); background: var(--color-surface); }
+
+.previewList {
+  background: var(--color-surface2);
+  border-radius: var(--radius-tile);
+  padding: 12px;
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.previewItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-ink2);
+}
+.clashWarning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(196,43,43,.07);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--color-bad);
+}
+
+.modalActions { display: flex; gap: 8px; justify-content: flex-end; }

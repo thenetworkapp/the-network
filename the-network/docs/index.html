@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Network — Production Management</title>
+  <meta name="description" content="The Network is a production management platform built for sports broadcasting teams." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1C3FCB;
+      --blue-light: #5B7FFF;
+      --ink: #111318;
+      --muted: #6B7280;
+      --ground: #EDEFF3;
+      --surface: #ffffff;
+      --line: #E2E5EA;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--ground);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    header nav {
+      margin-left: auto;
+      display: flex;
+      gap: 24px;
+    }
+
+    header nav a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    header nav a:hover { color: var(--ink); }
+
+    .hero {
+      max-width: 760px;
+      margin: 80px auto 0;
+      padding: 0 32px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(28, 63, 203, 0.08);
+      border: 1px solid rgba(28, 63, 203, 0.18);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    .features {
+      max-width: 960px;
+      margin: 80px auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(28, 63, 203, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--blue);
+    }
+
+    .feature-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .platforms {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .platforms h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .platform-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .platform-chip {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 32px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <svg class="logo-mark" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1024" height="1024" rx="224" fill="#1C3FCB"/>
+      <path d="M220 740V284H320L520 610V284H620V740H520L320 414V740H220Z" fill="white"/>
+      <path d="M665 460V564L775 512Z" fill="#5B7FFF"/>
+    </svg>
+    <span class="logo-text">The Network</span>
+    <nav>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Production management for <span>sports broadcasting</span></h1>
+    <p>The Network is an internal platform that helps sports broadcasting teams manage shows, videos, clips, scheduling, and platform analytics — all in one place.</p>
+    <p class="hero-meta">A desktop application for Windows &amp; macOS</p>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M8 10l3 2 3-4"/></svg>
+      </div>
+      <h3>Show &amp; Video Management</h3>
+      <p>Create shows, track video production stages from filming through to upload, and manage the full episode workflow.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M10 2v16M2 10h16"/></svg>
+      </div>
+      <h3>Platform Analytics</h3>
+      <p>Connect YouTube, Instagram, TikTok, and Spotify to view unified analytics — views, watch time, engagement — across all channels.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M2 8h16"/><path d="M7 3v5M13 3v5"/></svg>
+      </div>
+      <h3>Production Scheduling</h3>
+      <p>Plan recording sessions, schedule uploads, and coordinate team availability through an integrated calendar.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="10" cy="7" r="3"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+      </div>
+      <h3>Team Management</h3>
+      <p>Manage roles, positions, approvals, and communications for the full production team across departments.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M4 4h12M4 8h8M4 12h10M4 16h6"/></svg>
+      </div>
+      <h3>Footage &amp; Asset Tracking</h3>
+      <p>Track raw footage, graphics, edits, and exports with automatic folder structure and file monitoring.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg>
+      </div>
+      <h3>Internal Use Only</h3>
+      <p>The Network is a private internal tool used exclusively by authorised production staff.</p>
+    </div>
+  </section>
+
+  <section class="platforms">
+    <h2>Connected platforms</h2>
+    <div class="platform-list">
+      <span class="platform-chip">YouTube</span>
+      <span class="platform-chip">Instagram</span>
+      <span class="platform-chip">TikTok</span>
+      <span class="platform-chip">Spotify</span>
+      <span class="platform-chip">Apple Podcasts</span>
+      <span class="platform-chip">RSS</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>The Network — production management for sports broadcasting teams.</p>
+    <p style="margin-top:8px"><a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "@network/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "@types/node": "^22.5.5",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "typescript": "^5.5.4",
+    "zod": "^3.23.8"
+  }
+}

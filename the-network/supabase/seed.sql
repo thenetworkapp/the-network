@@ -1,0 +1,3 @@
+-- Seed data
+-- Shows, positions, and platform connections are created through the app.
+-- Do not insert test data here — all content must come from connected accounts.

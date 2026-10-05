@@ -1,0 +1,263 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.archiveToggle {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+.archiveToggle:hover { background: var(--color-surface2); color: var(--color-ink2); }
+.archiveToggleActive { border-color: var(--color-blue); color: var(--color-blue); background: rgba(28,63,203,.06); }
+
+/* ── Show grid ───────────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.card:hover {
+  border-color: var(--color-blue);
+  box-shadow: 0 4px 16px rgba(28,63,203,.08);
+}
+
+.card:hover .cardActions {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cardArchived {
+  opacity: 0.6;
+}
+
+.archivedBanner {
+  background: var(--color-surface2);
+  border-bottom: 1px solid var(--color-line);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  padding: 4px 14px;
+}
+
+.cardBody {
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-tile);
+  background: rgba(28,63,203,.08);
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.cardName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardSlug {
+  font-size: 11px;
+  font-family: var(--font-mono, monospace);
+  color: var(--color-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
+.cardBadges {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 7px;
+  border-radius: var(--radius-control);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.editType_show    { background: rgba(28,63,203,.1); color: var(--color-blue); }
+.editType_podcast { background: rgba(21,128,61,.1); color: var(--color-ok); }
+.editType_quick   { background: rgba(178,94,0,.1); color: var(--color-warn); }
+
+.badgeCamera { background: var(--color-surface2); color: var(--color-ink3); }
+
+/* ── Card action buttons (visible on hover) ─────────────────────────────── */
+
+.cardActions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.actionBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+  box-shadow: 0 1px 4px rgba(17,19,24,.08);
+}
+
+.actionBtn:hover { background: var(--color-surface2); color: var(--color-ink2); border-color: var(--color-line); }
+.actionBtnActive { color: var(--color-blue); border-color: var(--color-blue); }
+
+/* ── Empty state ─────────────────────────────────────────────────────────── */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+/* ── Modal ───────────────────────────────────────────────────────────────── */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17,19,24,.3);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-sheet);
+  padding: 28px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 64px rgba(17,19,24,.18);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+.formGroup { display: flex; flex-direction: column; gap: 4px; }
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.label { font-size: 12px; font-weight: 600; color: var(--color-ink2); }
+
+.input, .select {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface2);
+  font-family: var(--font-text);
+  font-size: 13px;
+  color: var(--color-ink);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input:focus, .select:focus { border-color: var(--color-blue); background: var(--color-surface); }
+
+.modalActions { display: flex; gap: 8px; justify-content: flex-end; }

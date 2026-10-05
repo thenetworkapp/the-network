@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Blue rounded square background -->
+  <rect width="1024" height="1024" rx="224" ry="224" fill="#1C3FCB"/>
+
+  <!-- White "N" letterform — bold condensed, slight angle -->
+  <path d="M 220 740 L 220 284 L 320 284 L 520 610 L 520 284 L 620 284 L 620 740 L 520 740 L 320 414 L 320 740 Z"
+        fill="white"/>
+
+  <!-- Play triangle — lighter blue, positioned right of the N -->
+  <path d="M 665 460 L 665 564 L 775 512 Z"
+        fill="#5B7FFF"/>
+</svg>
